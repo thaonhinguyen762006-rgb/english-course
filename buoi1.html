@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tiếng Anh giao tiếp – Buổi 1: Chào hỏi &amp; Làm quen</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mu:#5d6679;--ac:#2557d6;--ac2:#e8eefc;--w:#c2417b;--w2:#fbe9f2;--m:#1f7a5a;--m2:#e4f5ee;--bd:#dfe3ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1b2030;--tx:#eef1f8;--mu:#a3adc2;--ac:#7ea2ff;--ac2:#222c4a;--w:#f08ab9;--w2:#3a2231;--m:#5fd4a6;--m2:#1d3a30;--bd:#2d3550}}
+:root[data-theme="dark"]{--bg:#12151d;--card:#1b2030;--tx:#eef1f8;--mu:#a3adc2;--ac:#7ea2ff;--ac2:#222c4a;--w:#f08ab9;--w2:#3a2231;--m:#5fd4a6;--m2:#1d3a30;--bd:#2d3550}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;font-size:13px;color:var(--mu)}
+.chip{background:var(--ac2);color:var(--ac);padding:3px 10px;border-radius:99px;font-weight:600}
+main{flex:1;overflow-y:auto;padding:0 18px 12px}
+.slide{display:none;max-width:980px;margin:0 auto}.slide.on{display:block}
+h1{font-size:34px;margin:8px 0}h2{font-size:26px;margin:4px 0 10px}h3{font-size:17px;margin:0 0 6px;color:var(--ac)}
+p{margin:6px 0}.mu{color:var(--mu)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.card ul{margin:4px 0;padding-left:18px}.card li{margin:4px 0}
+.en{font-weight:600}.vi{color:var(--mu);font-size:14px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--ac2);color:var(--ac)}
+.line{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:8px 10px;margin:6px 0;border:1px solid var(--bd);cursor:pointer}
+.line.W{background:var(--w2);border-left:5px solid var(--w)}.line.M{background:var(--m2);border-left:5px solid var(--m)}
+.line.pl{outline:2px solid var(--ac)}
+.who{min-width:62px;font-size:12px;font-weight:700}.W .who{color:var(--w)}.M .who{color:var(--m)}
+.line .vi{display:none}.showvi .line .vi{display:block}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+button{font:inherit;font-size:14px;background:var(--ac);color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+button.g{background:var(--ac2);color:var(--ac)}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{border-bottom:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--mu);font-size:13px}
+.act{border-left:4px solid var(--ac);padding:6px 12px;margin:8px 0;background:var(--card);border-radius:0 8px 8px 0}
+.act b{color:var(--ac)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:10px 18px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--bd);background:var(--card)}
+.note{font-size:13px;color:var(--mu)}
+select{font:inherit;font-size:13px;max-width:210px;padding:6px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}</style></head><body>
+<div class="top"><span id="ttl">Buổi 1 · Chào hỏi &amp; Làm quen</span><span class="chip" id="tm"></span></div>
+<div class="note" style="padding:0 18px">Nghe trên điện thoại: mở link bằng Chrome hoặc Safari, tắt chế độ im lặng, tăng âm lượng. Không mở trong Zalo hoặc trình duyệt trong app.</div>
+<details class="note" style="padding:0 18px"><summary>Giọng nghe lạ? Bấm để đổi giọng</summary><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0"><select class="vp" data-g="W"></select><select class="vp" data-g="M"></select><button class="g" data-tv>Thử giọng</button></div></details>
+<div id="warn" class="note" style="display:none;padding:6px 18px;color:#d33"></div>
+<main id="m">
+
+<section class="slide" data-t="Hội thoại 1">
+<span class="tag">Hội thoại 1</span><h2>Đón khách tại sảnh</h2>
+<p class="mu">Tình huống: đối tác lần đầu đến công ty, bạn ra sảnh đón. Nữ = chủ nhà, Nam = khách.</p>
+<div class="bar"><button data-play="d1">▶ Nghe cả đoạn</button><button class="g" data-stop>■ Dừng</button><button class="g" data-vi>Hiện/ẩn dịch</button></div>
+<div class="dlg" id="d1"></div>
+<p class="note">Bấm vào từng câu để nghe lại. Có thể đổi tốc độ ở ô chọn phía trên. Nên mở bằng Chrome để nghe đúng giọng.</p>
+</section>
+
+<section class="slide" data-t="Bóc tách hội thoại 1">
+<h2>Bóc tách từ Hội thoại 1</h2>
+<div class="grid">
+<div class="card"><h3>Mẫu câu</h3><table>
+<tr><td class="en">Welcome to our office!</td><td class="vi">Chào mừng đến văn phòng</td></tr>
+<tr><td class="en">It’s a pleasure to meet you.</td><td class="vi">Rất hân hạnh gặp bạn</td></tr>
+<tr><td class="en">The pleasure is mine.</td><td class="vi">Hân hạnh là của tôi</td></tr>
+<tr><td class="en">Did you have any trouble finding…?</td><td class="vi">Bạn có khó tìm… không?</td></tr>
+<tr><td class="en">Would you like some water or coffee?</td><td class="vi">Bạn dùng nước hay cà phê?</td></tr></table></div>
+<div class="card"><h3>Từ vựng</h3><table>
+<tr><td class="en">guest</td><td class="vi">khách</td></tr>
+<tr><td class="en">traffic / rush hour</td><td class="vi">giao thông / giờ cao điểm</td></tr>
+<tr><td class="en">flight</td><td class="vi">chuyến bay</td></tr>
+<tr><td class="en">meeting room</td><td class="vi">phòng họp</td></tr>
+<tr><td class="en">follow me</td><td class="vi">đi theo tôi</td></tr></table></div></div>
+</section>
+
+<section class="slide" data-t="Ngữ pháp 1">
+<span class="tag">Ngữ pháp 1</span><h2>Động từ to-be: I am / You are / She is</h2>
+<div class="grid"><div class="card"><h3>Từ hội thoại</h3><p class="en">I’m the manager here.</p><p class="en">Are you the guest from ABC?</p><p class="en">It was a bit long.</p></div>
+<div class="card"><h3>Mẫu</h3><table><tr><td>I</td><td>am (I’m)</td></tr><tr><td>You / We / They</td><td>are</td></tr><tr><td>He / She / It</td><td>is</td></tr></table>
+<p class="vi">Hỏi: đảo to-be lên trước → <i>Are you…?</i></p></div></div>
+</section>
+
+<section class="slide" data-t="Ngữ pháp 2">
+<span class="tag">Ngữ pháp 2</span><h2>Would you like + to V</h2>
+<div class="grid"><div class="card"><h3>Từ hội thoại</h3><p class="en">Would you like some water or coffee?</p><p class="en">A coffee would be great.</p></div>
+<div class="card"><h3>Mẫu</h3><p><b>Would you like + (a/some) danh từ?</b> / <b>to + V?</b></p><p class="vi">Trả lời: <i>I’d like a coffee, please. / I’d like to see the room.</i></p></div></div>
+</section>
+
+<section class="slide" data-t="Hội thoại 2">
+<span class="tag">Hội thoại 2</span><h2>Làm quen ở tiệc networking</h2>
+<p class="mu">Tình huống: tiệc đứng cuối năm, hai người chưa quen nhau. Nam bắt chuyện trước.</p>
+<div class="bar"><button data-play="d2">▶ Nghe cả đoạn</button><button class="g" data-stop>■ Dừng</button><button class="g" data-vi>Hiện/ẩn dịch</button></div>
+<div class="dlg" id="d2"></div>
+<p class="note">Bấm vào từng câu để nghe lại. Có thể đổi tốc độ ở ô chọn phía trên. Nên mở bằng Chrome để nghe đúng giọng.</p>
+</section>
+
+<section class="slide" data-t="Bóc tách hội thoại 2">
+<h2>Bóc tách từ Hội thoại 2</h2>
+<div class="grid">
+<div class="card"><h3>Mẫu câu</h3><table>
+<tr><td class="en">I don’t think we’ve met.</td><td class="vi">Hình như ta chưa gặp</td></tr>
+<tr><td class="en">What line of work are you in?</td><td class="vi">Bạn làm ngành nào?</td></tr>
+<tr><td class="en">How long have you been in…?</td><td class="vi">Bạn làm… bao lâu rồi?</td></tr>
+<tr><td class="en">Could we exchange business cards?</td><td class="vi">Mình trao danh thiếp nhé?</td></tr>
+<tr><td class="en">The presentation will start soon.</td><td class="vi">Sắp bắt đầu rồi</td></tr></table></div>
+<div class="card"><h3>Từ vựng</h3><table>
+<tr><td class="en">trading / exporting</td><td class="vi">thương mại / xuất khẩu</td></tr>
+<tr><td class="en">challenging</td><td class="vi">nhiều thử thách</td></tr>
+<tr><td class="en">business card</td><td class="vi">danh thiếp</td></tr>
+<tr><td class="en">mainly focus on</td><td class="vi">chủ yếu tập trung vào</td></tr>
+<tr><td class="en">Let’s + V</td><td class="vi">Hãy cùng… (rủ rê)</td></tr></table></div></div>
+</section>
+
+<section class="slide" data-t="Ngữ pháp 3">
+<span class="tag">Ngữ pháp 3</span><h2>have been + for / since</h2>
+<div class="grid"><div class="card"><h3>Từ hội thoại</h3><p class="en">I’ve been in Marketing for about three years.</p><p class="en">How long have you been in that field?</p></div>
+<div class="card"><h3>Mẫu</h3><p><b>I / We / You / They have been…</b></p><p><b>He / She / It has been…</b></p><p class="vi">Việc bắt đầu trong quá khứ, kéo dài đến bây giờ. <i>for</i> + khoảng thời gian (3 years); <i>since</i> + mốc (2022).</p></div></div>
+</section>
+
+<section class="slide" data-t="Thành ngữ">
+<h2>2 cụm thành ngữ từ Hội thoại 2</h2>
+<div class="grid"><div class="card"><h3>1. break the ice</h3><p class="en">“Thanks for breaking the ice.”</p><p class="vi">Phá vỡ sự ngượng ngập ban đầu, mở lời làm quen.</p><p>Ví dụ: <i>A small joke can break the ice.</i></p></div>
+<div class="card"><h3>2. keep in touch</h3><p class="en">“Let’s keep in touch!”</p><p class="vi">Giữ liên lạc.</p><p>Ví dụ: <i>Please keep in touch by email.</i></p></div></div>
+</section>
+
+</main>
+<nav><button class="g" id="pv">← Trước</button><span class="note" id="pg"></span><button id="nx">Sau →</button></nav>
+<script>
+var D={
+d1:[["W","Excuse me, are you the guest from ABC Corp?","Xin lỗi, anh là khách của công ty ABC phải không ạ?"],
+["M","Yes, that’s right. I’m here for a meeting at ten.","Vâng đúng vậy. Tôi đến họp lúc mười giờ."],
+["W","Welcome to our office! I’m the manager here. It’s a pleasure to meet you.","Chào mừng anh đến văn phòng! Tôi là quản lý ở đây. Rất hân hạnh gặp anh."],
+["M","The pleasure is mine. Thank you for having me.","Hân hạnh là của tôi. Cảm ơn vì đã đón tiếp."],
+["W","Did you have any trouble finding our office?","Anh có gặp khó khăn khi tìm văn phòng không?"],
+["M","No, not at all. But the traffic here is crazy!","Không hề. Nhưng giao thông ở đây thật điên rồ!"],
+["W","Yes, rush hour can be bad. How was your flight?","Vâng, giờ cao điểm khá tệ. Chuyến bay của anh thế nào?"],
+["M","It was a bit long, but I’m fine.","Hơi dài nhưng tôi ổn."],
+["W","Would you like some water or coffee before we start?","Anh muốn dùng nước hay cà phê trước khi bắt đầu không?"],
+["M","A coffee would be great, thank you.","Một ly cà phê thì tuyệt, cảm ơn."],
+["W","Sure. Please follow me to the meeting room.","Vâng. Mời anh theo tôi đến phòng họp."],
+["M","Thank you. After you.","Cảm ơn. Chị đi trước."]],
+d2:[["M","Hello, I don’t think we’ve met. The food here is great, isn’t it?","Xin chào, hình như chúng ta chưa gặp. Đồ ăn ở đây ngon nhỉ?"],
+["W","Oh, hi! Thanks for breaking the ice. It’s amazing. Nice to meet you.","Ồ chào anh! Cảm ơn đã bắt chuyện trước. Tuyệt lắm. Rất vui được gặp anh."],
+["M","Nice to meet you too. What line of work are you in?","Tôi cũng rất vui. Chị làm trong ngành nào?"],
+["W","I’ve been in Marketing for about three years. And you?","Tôi làm Marketing khoảng ba năm rồi. Còn anh?"],
+["M","I’m a manager at a trading company. We mainly focus on exporting.","Tôi là quản lý ở một công ty thương mại. Chúng tôi chủ yếu xuất khẩu."],
+["W","Oh, trading! That sounds challenging. How long have you been in that field?","Ồ thương mại! Nghe nhiều thử thách. Anh làm lâu chưa?"],
+["M","For about ten years. It’s busy, but I enjoy it.","Khoảng mười năm. Bận nhưng tôi thích."],
+["W","That sounds interesting! Well, the main presentation will start soon.","Nghe thú vị đấy! À, bài thuyết trình chính sắp bắt đầu rồi."],
+["M","Right. It was great talking to you. Could we exchange business cards?","Đúng rồi. Rất vui được nói chuyện. Mình trao danh thiếp được không?"],
+["W","Sure, here is my card. Let’s keep in touch!","Được, danh thiếp của tôi đây. Giữ liên lạc nhé!"],
+["M","Definitely. Enjoy the rest of the evening!","Chắc chắn rồi. Chúc chị buổi tối vui vẻ!"]]};
+var S=[].slice.call(document.querySelectorAll(".slide")),cur=0,stopF=false,TTS=window.speechSynthesis;
+Object.keys(D).forEach(function(k){var h="";D[k].forEach(function(l,i){h+='<div class="line '+l[0]+'" data-k="'+k+'" data-i="'+i+'"><span class="who">'+(l[0]=="W"?"🔊 Nữ":"🔊 Nam")+'</span><div><div class="en">'+l[1]+'</div><div class="vi">'+l[2]+'</div></div></div>'});document.getElementById(k).innerHTML=h});
+function clean(t){return t.replace(/\u2019/g,"'").replace(/ABC Corp/g,"A B C Corporation")}
+var VW=null,VM=null,RATE=.95;
+function vlist(){return TTS?TTS.getVoices().filter(function(x){return/^en/i.test(x.lang)}):[]}
+var FEM=/aria|jenny|\bava\b|samantha|zira|susan|karen|moira|victoria|tessa|libby|sonia|allison|serena|emma|michelle|nicole|joanna|salli|kendra|kimberly|heather|hazel|catherine|fiona|amy|female|sfg|tpc|tpf|iob|iog/i,MAL=/guy|davis|david|mark|daniel|aaron|alex\b|george|ryan|james|thomas|tony|brian|christopher|eric|steffan|oliver|arthur|gordon|rishi|evan|matthew|liam|ronald|\bmale\b|iol|iom|tpd/i,PRE=/^(Google US English|Google UK English Male)$/i;
+function gend(v){var n=v.name+" "+(v.voiceURI||"");return FEM.test(n)?"W":(MAL.test(n.replace(/female/ig,""))?"M":"")}
+function qv(v){var n=v.name,s=0;if(/premium|enhanced|natural|neural|online|siri/i.test(n))s+=6;if(/google/i.test(n)||/network/.test(v.voiceURI||""))s+=2;if(/en[-_]US/i.test(v.lang))s+=2;if(/en[-_](GB|AU)/i.test(v.lang))s+=1;if(/compact|novelty|eloquence|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|kathy|ralph|agnes|princess|hysterical/i.test(n))s-=20;return s}
+function bst(a){return a.slice().sort(function(x,y){return qv(y)-qv(x)})[0]}
+function pick(g){var L=vlist(),sv=g=="W"?VW:VM,p;if(sv&&(p=L.filter(function(x){return(x.voiceURI||x.name)==sv})[0]))return p;
+p=L.filter(function(x){return PRE.test(x.name)&&(g=="W"?/US/:/UK/).test(x.name)})[0];if(p)return p;
+p=bst(L.filter(function(x){return gend(x)==g}));if(p)return p;
+if(g=="W")return bst(L.filter(function(x){return!gend(x)}))||bst(L);
+var w=pick("W");return bst(L.filter(function(x){return gend(x)!="W"&&x!==w}))||bst(L.filter(function(x){return x!==w}))||null}
+function wn(m){var e=document.getElementById("warn");if(e){e.textContent=m;e.style.display=m?"block":"none"}}
+function say(g,t,cb){if(!TTS){wn("Trình duyệt này không hỗ trợ đọc giọng. Hãy mở link bằng Chrome hoặc Safari.");return}
+var txt=clean(t),parts=(txt.match(/[^.!?]+[.!?]*/g)||[txt]).map(function(s){return s.trim()}).filter(Boolean),v=pick(g),gk=v&&(gend(v)==g||PRE.test(v.name)),g0=GEN,d=false,st=false,i=0,tm,fin=function(){if(d)return;d=true;clearTimeout(tm);if(g0==GEN&&cb)cb()};
+tm=setTimeout(fin,Math.max(3000,txt.length*140/RATE+parts.length*400+1500));
+function nx(){if(g0!=GEN||d)return;if(i>=parts.length){fin();return}var p=parts[i++],u=new SpeechSynthesisUtterance(p);u.lang=v?v.lang:"en-US";if(v)u.voice=v;
+var e=p.slice(-1),sp=/^([A-Za-z0-9]{1,5}[,.] ?){2,}/.test(p),pt=gk?1:(g=="W"?1.05:.92),rt=RATE;
+if(sp)rt*=.88;else if(e=="?"){pt+=.1;rt*=.97}else if(e=="!"){pt+=.12;rt*=1.04}
+if(/^(sorry|i.m sorry)/i.test(p)){pt-=.05;rt*=.95}if(/^(thank|great|welcome|certainly|of course|sure|definitely|perfect)/i.test(p))pt+=.06;
+u.pitch=Math.max(.85,Math.min(1.3,pt));u.rate=Math.max(.5,Math.min(1.6,rt));
+u.onstart=function(){st=true;wn("")};u.onend=function(){if(i>=parts.length)fin();else setTimeout(nx,sp?60:140)};u.onerror=fin;window._u=u;try{TTS.resume()}catch(x){}
+if(i==1&&window._cx){window._cx=false;setTimeout(function(){TTS.speak(u)},80)}else TTS.speak(u)}
+setTimeout(function(){if(!st&&g0==GEN&&!d)wn("Máy chưa phát được giọng. Hãy mở link bằng Chrome hoặc Safari (không mở trong Zalo), tắt chế độ im lặng và tăng âm lượng.")},3000);
+nx()}
+function initV(){try{VW=VW||localStorage.getItem("vW");VM=VM||localStorage.getItem("vM")}catch(e){}
+var L=vlist();[].forEach.call(document.querySelectorAll(".vp"),function(s){var g=s.dataset.g,c=pick(g);s.innerHTML=L.slice().sort(function(a,b){return qv(b)-qv(a)}).map(function(v){return'<option value="'+(v.voiceURI||v.name)+'">'+(g=="W"?"Nữ: ":"Nam: ")+v.name+'</option>'}).join("");if(c)s.value=c.voiceURI||c.name})}
+function setV(g,n){if(g=="W")VW=n;else VM=n;try{localStorage.setItem(g=="W"?"vW":"vM",n)}catch(e){}initV()}
+var GEN=0;function stop(){GEN++;window._cx=TTS&&(TTS.speaking||TTS.pending);stopF=true;if(TTS)TTS.cancel();[].forEach.call(document.querySelectorAll(".pl"),function(e){e.classList.remove("pl")})}
+function one(e){stop();stopF=false;e.classList.add("pl");var l=D[e.dataset.k][e.dataset.i];say(l[0],l[1],function(){e.classList.remove("pl")})}
+function all(k){stop();stopF=false;var els=document.querySelectorAll("#"+k+" .line"),i=0;(function nx(){if(stopF||i>=els.length)return;var e=els[i],l=D[k][i];i++;e.classList.add("pl");e.scrollIntoView({block:"nearest"});say(l[0],l[1],function(){e.classList.remove("pl");setTimeout(nx,450)})})()}
+document.addEventListener("click",function(ev){var t=ev.target,e;
+if((e=t.closest(".line")))return one(e);
+if(t.dataset.play)return all(t.dataset.play);
+if(t.hasAttribute("data-stop"))return stop();
+if(t.hasAttribute("data-vi"))return document.querySelector(".slide.on").classList.toggle("showvi")});
+function go(n){stop();cur=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,i){s.classList.toggle("on",i==cur)});
+document.getElementById("pg").textContent=(cur+1)+" / "+S.length;document.getElementById("tm").textContent=S[cur].dataset.t;
+document.getElementById("m").scrollTop=0;try{location.hash=cur+1}catch(e){}}
+document.getElementById("pv").onclick=function(){go(cur-1)};document.getElementById("nx").onclick=function(){go(cur+1)};
+document.addEventListener("keydown",function(e){if(e.key=="ArrowRight")go(cur+1);if(e.key=="ArrowLeft")go(cur-1)});
+[].forEach.call(document.querySelectorAll(".bar"),function(b){b.insertAdjacentHTML("beforeend",'<select class="sp"><option value=".75">Chậm</option><option value=".95" selected>Vừa</option><option value="1.1">Bình thường nhanh</option></select>')});
+if(TTS){TTS.onvoiceschanged=initV;setTimeout(initV,300)}initV();
+document.addEventListener("change",function(e){var t=e.target;if(t.classList.contains("vp")){setV(t.dataset.g,t.value)}if(t.classList.contains("sp")){RATE=+t.value;[].forEach.call(document.querySelectorAll(".sp"),function(x){x.value=t.value})}});
+document.addEventListener("click",function(ev){if(ev.target.hasAttribute("data-tv")){stop();stopF=false;say("W","Hello! It’s a pleasure to meet you.",function(){say("M","The pleasure is mine. How are you?")})}});
+var h=parseInt((location.hash||"").slice(1));go(h>0?h-1:0);
+</script></body></html>
