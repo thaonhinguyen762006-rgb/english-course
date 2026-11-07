@@ -105,24 +105,24 @@ Object.keys(D).forEach(function(k){var h="";D[k].forEach(function(l,i){h+='<div 
 function clean(t){return t.replace(/\u2019/g,"'").replace(/ABC Corp/g,"A B C Corporation")}
 var VW=null,VM=null,RATE=.95;
 function vlist(){return TTS?TTS.getVoices().filter(function(x){return/^en/i.test(x.lang)}):[]}
-var FEM=/aria|jenny|\bava\b|samantha|zira|susan|karen|moira|victoria|tessa|libby|sonia|allison|serena|emma|michelle|nicole|joanna|salli|kendra|kimberly|heather|hazel|catherine|fiona|amy|female|sfg|tpc|tpf|iob|iog/i,MAL=/guy|davis|david|mark|daniel|aaron|alex\b|george|ryan|james|thomas|tony|brian|christopher|eric|steffan|oliver|arthur|gordon|rishi|evan|matthew|liam|ronald|\bmale\b|iol|iom|tpd/i,PRE=/^(Google US English|Google UK English Male)$/i;
+var FEM=/aria|jenny|\bava\b|samantha|zira|susan|karen|moira|victoria|tessa|libby|sonia|allison|serena|emma|michelle|nicole|joanna|salli|kendra|kimberly|heather|hazel|catherine|fiona|amy|female|sfg|tpf|iob|iog|gbg|rjs|#female/i,MAL=/guy|davis|david|mark|daniel|aaron|alex\b|george|ryan|james|thomas|tony|brian|christopher|eric|steffan|oliver|arthur|gordon|rishi|evan|matthew|liam|ronald|\bmale\b|iol|iom|tpd|tpc|sfb|gba|gbd|rjm|#male/i,PRE=/^(Google US English|Google UK English Male)$/i;
 function gend(v){var n=v.name+" "+(v.voiceURI||"");return FEM.test(n)?"W":(MAL.test(n.replace(/female/ig,""))?"M":"")}
-function qv(v){var n=v.name,s=0;if(/premium|enhanced|natural|neural|online|siri/i.test(n))s+=6;if(/google/i.test(n)||/network/.test(v.voiceURI||""))s+=2;if(/en[-_]US/i.test(v.lang))s+=2;if(/en[-_](GB|AU)/i.test(v.lang))s+=1;if(/compact|novelty|eloquence|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|kathy|ralph|agnes|princess|hysterical/i.test(n))s-=20;return s}
+function qv(v){var n=v.name+" "+(v.voiceURI||""),s=0;if(/premium|enhanced|natural|neural|online|siri/i.test(n))s+=6;if(/google/i.test(n)||/network/.test(n))s+=2;if(/en[-_]US/i.test(v.lang))s+=2;if(/en[-_](GB|AU)/i.test(v.lang))s+=1;if(/compact|novelty|eloquence|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|albert|fred|junior|kathy|ralph|agnes|princess|hysterical/i.test(n))s-=20;return s}
 function bst(a){return a.slice().sort(function(x,y){return qv(y)-qv(x)})[0]}
 function pick(g){var L=vlist(),sv=g=="W"?VW:VM,p;if(sv&&(p=L.filter(function(x){return(x.voiceURI||x.name)==sv})[0]))return p;
 p=L.filter(function(x){return PRE.test(x.name)&&(g=="W"?/US/:/UK/).test(x.name)})[0];if(p)return p;
 p=bst(L.filter(function(x){return gend(x)==g}));if(p)return p;
-if(g=="W")return bst(L.filter(function(x){return!gend(x)}))||bst(L);
-var w=pick("W");return bst(L.filter(function(x){return gend(x)!="W"&&x!==w}))||bst(L.filter(function(x){return x!==w}))||null}
+if(g=="W")return bst(L.filter(function(x){return/en[-_]US/i.test(x.lang)&&gend(x)!="M"}))||bst(L);
+var w=pick("W");return bst(L.filter(function(x){return gend(x)!="W"&&x!==w&&!/en[-_]US/i.test(x.lang)}))||bst(L.filter(function(x){return gend(x)!="W"&&x!==w}))||bst(L.filter(function(x){return x!==w}))||null}
 function wn(m){var e=document.getElementById("warn");if(e){e.textContent=m;e.style.display=m?"block":"none"}}
 function say(g,t,cb){if(!TTS){wn("Trình duyệt này không hỗ trợ đọc giọng. Hãy mở link bằng Chrome hoặc Safari.");return}
-var txt=clean(t),parts=(txt.match(/[^.!?]+[.!?]*/g)||[txt]).map(function(s){return s.trim()}).filter(Boolean),v=pick(g),gk=v&&(gend(v)==g||PRE.test(v.name)),g0=GEN,d=false,st=false,i=0,tm,fin=function(){if(d)return;d=true;clearTimeout(tm);if(g0==GEN&&cb)cb()};
+var isA=/Android/i.test(navigator.userAgent),txt=clean(t),parts=(txt.match(/[^.!?]+[.!?]*/g)||[txt]).map(function(s){return s.trim()}).filter(Boolean),v=pick(g),gk=v&&(gend(v)==g||PRE.test(v.name)),g0=GEN,d=false,st=false,i=0,tm,fin=function(){if(d)return;d=true;clearTimeout(tm);if(g0==GEN&&cb)cb()};
 tm=setTimeout(fin,Math.max(3000,txt.length*140/RATE+parts.length*400+1500));
-function nx(){if(g0!=GEN||d)return;if(i>=parts.length){fin();return}var p=parts[i++],u=new SpeechSynthesisUtterance(p);u.lang=v?v.lang:"en-US";if(v)u.voice=v;
-var e=p.slice(-1),sp=/^([A-Za-z0-9]{1,5}[,.] ?){2,}/.test(p),pt=gk?1:(g=="W"?1.05:.92),rt=RATE;
-if(sp)rt*=.88;else if(e=="?"){pt+=.1;rt*=.97}else if(e=="!"){pt+=.12;rt*=1.04}
-if(/^(sorry|i.m sorry)/i.test(p)){pt-=.05;rt*=.95}if(/^(thank|great|welcome|certainly|of course|sure|definitely|perfect)/i.test(p))pt+=.06;
-u.pitch=Math.max(.85,Math.min(1.3,pt));u.rate=Math.max(.5,Math.min(1.6,rt));
+function nx(){if(g0!=GEN||d)return;if(i>=parts.length){fin();return}var p=parts[i++],u=new SpeechSynthesisUtterance(p);if(v){u.voice=v;u.lang=v.lang}else u.lang=g=="M"?"en-GB":"en-US";
+var e=p.slice(-1),sp=/^([A-Za-z0-9]{1,5}[,.] ?){2,}/.test(p),pt=g=="W"?1.08:((gk&&!isA)?.95:.72),rt=RATE;
+if(sp)rt*=.88;else if(e=="?"){pt+=.08;rt*=.97}else if(e=="!"){pt+=.1;rt*=1.04}
+if(/^(sorry|i.m sorry)/i.test(p)){pt-=.05;rt*=.95}if(/^(thank|great|welcome|certainly|of course|sure|definitely|perfect)/i.test(p))pt+=.05;
+u.pitch=Math.max(.65,Math.min(1.35,pt));u.rate=Math.max(.5,Math.min(1.6,rt));
 u.onstart=function(){st=true;wn("")};u.onend=function(){if(i>=parts.length)fin();else setTimeout(nx,sp?60:140)};u.onerror=fin;window._u=u;try{TTS.resume()}catch(x){}
 if(i==1&&window._cx){window._cx=false;setTimeout(function(){TTS.speak(u)},80)}else TTS.speak(u)}
 setTimeout(function(){if(!st&&g0==GEN&&!d)wn("Máy chưa phát được giọng. Hãy mở link bằng Chrome hoặc Safari (không mở trong Zalo), tắt chế độ im lặng và tăng âm lượng.")},3000);
