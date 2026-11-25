@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tiếng Anh giao tiếp – Buổi 6: Nhà hàng, gọi món &amp; thanh toán</title>
 <style>
-/* Thiết lập biến màu cho chế độ sáng (Light mode) và vùng an toàn trên điện thoại */
+/* Biến màu cho chế độ sáng (Light mode) và hỗ trợ vùng an toàn trên điện thoại */
 :root{--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mu:#5d6679;--ac:#2557d6;--ac2:#e8eefc;--w:#c2417b;--w2:#fbe9f2;--m:#1f7a5a;--m2:#e4f5ee;--bd:#dfe3ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-/* Chế độ tối tự động theo hệ thống hoặc thuộc tính data-theme */
+/* Tự động chuyển chế độ tối (Dark mode) theo hệ thống */
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1b2030;--tx:#eef1f8;--mu:#a3adc2;--ac:#7ea2ff;--ac2:#222c4a;--w:#f08ab9;--w2:#3a2231;--m:#5fd4a6;--m2:#1d3a30;--bd:#2d3550}}
 :root[data-theme="dark"]{--bg:#12151d;--card:#1b2030;--tx:#eef1f8;--mu:#a3adc2;--ac:#7ea2ff;--ac2:#222c4a;--w:#f08ab9;--w2:#3a2231;--m:#5fd4a6;--m2:#1d3a30;--bd:#2d3550}
 *{box-sizing:border-box}html,body{height:100%;margin:0}
@@ -32,10 +32,11 @@ p{margin:6px 0}.mu{color:var(--mu)}
 .line.pl{outline:2px solid var(--ac)}
 .who{min-width:62px;font-size:12px;font-weight:700}.W .who{color:var(--w)}.M .who{color:var(--m)}
 .line .vi{display:none}.showvi .line .vi{display:block}
-/* Thanh nút bấm và điều khiển */
+/* Thanh nút bấm và trạng thái nút lặp lại */
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
 button{font:inherit;font-size:14px;background:var(--ac);color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
 button.g{background:var(--ac2);color:var(--ac)}
+button.loop-btn.on{background:var(--m);color:#fff}
 table{width:100%;border-collapse:collapse;font-size:15px}td,th{border-bottom:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--mu);font-size:13px}
 .act{border-left:4px solid var(--ac);padding:6px 12px;margin:8px 0;background:var(--card);border-radius:0 8px 8px 0}
 .act b{color:var(--ac)}
@@ -52,7 +53,7 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 </head>
 <body>
 
-<!-- Thanh tiêu đề buổi học và tên slide hiện tại -->
+<!-- Thanh tiêu đề buổi học và chip tên slide hiện tại -->
 <div class="top"><span id="ttl">Buổi 6 · Nhà hàng, gọi món &amp; thanh toán</span><span class="chip" id="tm"></span></div>
 <div class="note" style="padding:0 18px">Nghe trên điện thoại: mở link bằng Chrome hoặc Safari, tắt chế độ im lặng, tăng âm lượng. Không mở trong Zalo hoặc trình duyệt trong app.</div>
 
@@ -67,21 +68,22 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 </details>
 <div id="warn" class="note" style="display:none;padding:6px 18px;color:#d33"></div>
 
-<!-- Danh sách 14 slide bài học -->
+<!-- Khu vực chứa 14 slide bài học -->
 <main id="m">
 
 <!-- Slide 1: Hội thoại 1 -->
 <section class="slide" data-t="Hội thoại 1">
   <span class="tag">Hội thoại 1</span>
-  <h2>Đặt bàn, hỏi món &amp; dị ứng</h2>
-  <p class="mu">Tình huống: hai người bạn đến nhà hàng dùng bữa tối, hỏi gợi ý món ăn và lưu ý dị ứng. Nữ = nhân viên phục vụ, Nam = khách.</p>
+  <h2>Đặt bàn &amp; gọi món ở nhà hàng</h2>
+  <p class="mu">Tình huống: khách đến nhà hàng dùng bữa tối, hỏi gợi ý món ăn, lưu ý dị ứng và chọn món. Nữ = nhân viên phục vụ, Nam = khách.</p>
   <div class="bar spd">
     <button data-play="d1">▶ Nghe cả đoạn</button>
     <button class="g" data-stop>■ Dừng</button>
+    <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
     <button class="g" data-vi>Hiện/ẩn dịch</button>
   </div>
   <div class="dlg" id="d1"></div>
-  <p class="note">Bấm vào từng câu để nghe lại. Có thể đổi tốc độ ở ô chọn phía trên.</p>
+  <p class="note">Bấm vào từng câu để nghe lại. Bật 🔁 Lặp lại để tự động phát lại từ đầu khi đọc hết đoạn.</p>
 </section>
 
 <!-- Slide 2: Bóc tách hội thoại 1 -->
@@ -91,27 +93,27 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
     <div class="card">
       <h3>Mẫu câu</h3>
       <table>
-        <tr><td class="en">A table for two.</td><td class="vi">Một bàn cho hai người</td></tr>
+        <tr><td class="en">A table for two, please.</td><td class="vi">Một bàn cho hai người</td></tr>
         <tr><td class="en">The reservation is under…</td><td class="vi">Đặt bàn dưới tên…</td></tr>
         <tr><td class="en">Are you ready to order?</td><td class="vi">Bạn đã sẵn sàng gọi món chưa?</td></tr>
         <tr><td class="en">What do you recommend?</td><td class="vi">Bạn gợi ý món nào?</td></tr>
         <tr><td class="en">I’m allergic to…</td><td class="vi">Tôi bị dị ứng với…</td></tr>
         <tr><td class="en">I’ll go for the grilled steak.</td><td class="vi">Tôi sẽ chọn bít tết nướng</td></tr>
         <tr><td class="en">With the sauce on the side.</td><td class="vi">Nước sốt để riêng</td></tr>
-        <tr><td class="en">The atmosphere is great, isn’t it?</td><td class="vi">Không khí tuyệt quá, phải không?</td></tr>
+        <tr><td class="en">I’d like / I’ll have…</td><td class="vi">Tôi muốn / Tôi sẽ dùng…</td></tr>
       </table>
     </div>
     <div class="card">
       <h3>Từ vựng &amp; cụm</h3>
       <table>
         <tr><td class="en">reservation</td><td class="vi">đặt bàn trước</td></tr>
-        <tr><td class="en">sparkling water</td><td class="vi">nước có ga</td></tr>
         <tr><td class="en">medium rare</td><td class="vi">chín tái vừa</td></tr>
         <tr><td class="en">on the side</td><td class="vi">để riêng (nước sốt, món kèm)</td></tr>
         <tr><td class="en">allergic to</td><td class="vi">dị ứng với</td></tr>
-        <tr><td class="en">herbs</td><td class="vi">rau thơm</td></tr>
+        <tr><td class="en">a bit too spicy</td><td class="vi">hơi cay quá một chút</td></tr>
+        <tr><td class="en">sparkling water</td><td class="vi">nước có ga</td></tr>
         <tr><td class="en">side salad</td><td class="vi">salad ăn kèm</td></tr>
-        <tr><td class="en">atmosphere</td><td class="vi">không khí, bầu không gian</td></tr>
+        <tr><td class="en">herbs / garlic</td><td class="vi">rau thơm / tỏi</td></tr>
       </table>
     </div>
   </div>
@@ -124,7 +126,7 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
   <div class="grid">
     <div class="card">
       <h3>Từ hội thoại</h3>
-      <p class="en">Would you like some water?</p>
+      <p class="en">Would you like some water to start?</p>
       <p class="en">Does the pasta have any peanuts?</p>
       <p class="en">Do you need a few more minutes?</p>
       <p class="en">Just a little sparkling water.</p>
@@ -132,12 +134,12 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
     <div class="card">
       <h3>Mẫu</h3>
       <table>
-        <tr><td class="en">some</td><td>câu khẳng định, lời mời/đề nghị (<i>some water, some fries</i>)</td></tr>
-        <tr><td class="en">any</td><td>câu hỏi &amp; phủ định (<i>any nuts?, aren’t any nuts</i>)</td></tr>
+        <tr><td class="en">some</td><td>khẳng định &amp; lời mời/đề nghị (<i>some water, some bread</i>)</td></tr>
+        <tr><td class="en">any</td><td>câu hỏi &amp; phủ định (<i>any peanuts?, aren’t any nuts</i>)</td></tr>
         <tr><td class="en">a few</td><td>một vài + danh từ đếm được số nhiều (<i>a few minutes, a few herbs</i>)</td></tr>
         <tr><td class="en">a little</td><td>một ít + danh từ không đếm được (<i>a little water, a little garlic</i>)</td></tr>
       </table>
-      <p class="vi">Dễ nhầm: dùng <i>some</i> (không dùng <i>any</i>) khi mời lịch sự: <i>Would you like some water?</i></p>
+      <p class="vi">Lưu ý: khi mời lịch sự ở nhà hàng, dùng <i>some</i> thay vì <i>any</i> (<i>Would you like some water?</i>).</p>
     </div>
   </div>
 </section>
@@ -145,21 +147,22 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 <!-- Slide 4: Ngữ pháp 2 -->
 <section class="slide" data-t="Ngữ pháp 2">
   <span class="tag">Ngữ pháp 2</span>
-  <h2>Câu hỏi đuôi (Tag questions) để bắt chuyện</h2>
+  <h2>Câu hỏi đuôi để bắt chuyện (Tag questions)</h2>
   <div class="grid">
     <div class="card">
       <h3>Từ hội thoại</h3>
-      <p class="en">The atmosphere here is great, isn’t it?</p>
-      <p class="en">The steak was amazing, wasn’t it?</p>
-      <p class="en">You don’t eat spicy food, do you?</p>
+      <p class="en">It’s great, isn’t it?</p>
+      <p class="en">You’ve been here before, haven’t you?</p>
+      <p class="en">The soup isn’t too spicy, is it?</p>
     </div>
     <div class="card">
       <h3>Mẫu</h3>
       <table>
-        <tr><td class="en">Khẳng định → đuôi phủ định</td><td><i>It’s great, isn’t it? / You like it, don’t you?</i></td></tr>
-        <tr><td class="en">Phủ định → đuôi khẳng định</td><td><i>It isn’t spicy, is it? / You don’t mind, do you?</i></td></tr>
+        <tr><td class="en">Khẳng định → phủ định</td><td><i>It’s great, isn’t it? / You like steak, don’t you?</i></td></tr>
+        <tr><td class="en">Phủ định → khẳng định</td><td><i>The soup isn’t too spicy, is it? / You don’t mind, do you?</i></td></tr>
+        <tr><td class="en">Với have / has (HTHT)</td><td><i>You’ve been here before, haven’t you?</i></td></tr>
       </table>
-      <p class="vi">Ngữ điệu xuống ở cuối khi bạn chỉ muốn bắt chuyện/đồng tình; ngữ điệu lên khi bạn thật sự không chắc và muốn hỏi.</p>
+      <p class="vi">Hạ giọng ở cuối câu khi bạn muốn bắt chuyện/chờ đồng tình; lên giọng khi bạn thật sự chưa chắc chắn.</p>
     </div>
   </div>
 </section>
@@ -167,32 +170,58 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 <!-- Slide 5: Ngữ pháp 3 -->
 <section class="slide" data-t="Ngữ pháp 3">
   <span class="tag">Ngữ pháp 3</span>
-  <h2>Gọi món &amp; quyết định tại chỗ: I’d like / I’ll have / I’ll go for</h2>
+  <h2>Gọi món &amp; quyết định tại chỗ</h2>
   <div class="grid">
     <div class="card">
       <h3>Từ hội thoại</h3>
-      <p class="en">I’d like a glass of red wine.</p>
+      <p class="en">I’d like a glass of red wine, please.</p>
       <p class="en">I’ll have a side salad too.</p>
-      <p class="en">I’ll go for the grilled steak.</p>
+      <p class="en">I’ll go for the grilled steak, medium rare.</p>
     </div>
     <div class="card">
       <h3>Mẫu</h3>
       <table>
         <tr><td class="en">I’d like + danh từ / to V</td><td>lịch sự nhất khi gọi món hoặc yêu cầu</td></tr>
-        <tr><td class="en">I’ll have + danh từ</td><td>tự nhiên, phổ biến khi quyết định chọn món ngay lúc nói</td></tr>
+        <tr><td class="en">I’ll have + danh từ</td><td>tự nhiên, dùng khi quyết định chọn món ngay lúc nói</td></tr>
         <tr><td class="en">I’ll go for + danh từ</td><td>thân mật hơn, nghĩa là “tôi chọn món này”</td></tr>
       </table>
-      <p class="vi">Tránh nói <i>I want a steak</i> với phục vụ vì nghe hơi cộc; luôn dùng <i>I’d like / I’ll have / Could I have</i>.</p>
+      <p class="vi">Tránh nói <i>I want a steak</i> với phục vụ vì nghe cộc lốc; hãy dùng <i>I’d like / I’ll have / Could I have</i>.</p>
     </div>
   </div>
 </section>
 
-<!-- Slide 6: Thành ngữ -->
+<!-- Slide 6: Phát âm & Rút gọn -->
+<section class="slide" data-t="Phát âm &amp; Rút gọn">
+  <span class="tag">Phát âm</span>
+  <h2>Rút gọn khi nói nhanh</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Dạng rút gọn phổ biến</h3>
+      <table>
+        <tr><td class="en">gonna (= going to)</td><td class="vi"><i>I’m gonna order the steak.</i></td></tr>
+        <tr><td class="en">wanna (= want to)</td><td class="vi"><i>Do you wanna split the bill?</i></td></tr>
+        <tr><td class="en">gotta (= have got to)</td><td class="vi"><i>I’ve gotta try this soup!</i></td></tr>
+        <tr><td class="en">’d (= would)</td><td class="vi"><i>I’d like some water.</i> (/aɪd laɪk/)</td></tr>
+        <tr><td class="en">’ll (= will)</td><td class="vi"><i>I’ll have the pasta.</i> (/aɪl hæv/)</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Lưu ý khi nghe &amp; nói</h3>
+      <ul>
+        <li>Trong giao tiếp thực tế, người bản xứ đọc lướt <b>I’d</b> (/aɪd/) và <b>I’ll</b> (/aɪl/) rất nhanh, gần như nối liền vào động từ sau.</li>
+        <li><b>gonna / wanna / gotta</b> dùng khi nói thân mật với bạn bè; không dùng trong văn viết trang trọng.</li>
+        <li>Thử đọc liền mạch: <i>“I’d like some water”</i>, <i>“I’ll go for the steak”</i>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Thành ngữ -->
 <section class="slide" data-t="Thành ngữ">
   <h2>2 cụm hay dùng ở nhà hàng</h2>
   <div class="grid">
     <div class="card">
-      <h3>1. it’s on me</h3>
+      <h3>1. It’s on me</h3>
       <p class="vi">Tôi mời / Để tôi trả (bữa ăn, ly nước).</p>
       <p class="en">“Put your wallet away — it’s on me tonight.”</p>
       <p>Ví dụ: <i>You paid last time, so lunch is on me today.</i></p>
@@ -206,48 +235,19 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
   </div>
 </section>
 
-<!-- Slide 7: Cụm nhà hàng & Phát âm -->
-<section class="slide" data-t="Cụm nhà hàng &amp; Phát âm">
-  <h2>Cụm từ thanh toán &amp; Phát âm rút gọn</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Thanh toán &amp; bàn ăn</h3>
-      <table>
-        <tr><td class="en">split the bill</td><td class="vi">chia hóa đơn</td></tr>
-        <tr><td class="en">could we get the check?</td><td class="vi">cho chúng tôi xin hóa đơn?</td></tr>
-        <tr><td class="en">service charge included</td><td class="vi">đã bao gồm phí phục vụ</td></tr>
-        <tr><td class="en">keep the change</td><td class="vi">giữ lại tiền thừa nhé</td></tr>
-        <tr><td class="en">to go</td><td class="vi">mang về</td></tr>
-        <tr><td class="en">help yourself</td><td class="vi">cứ tự nhiên (lấy ăn) nhé</td></tr>
-        <tr><td class="en">a bit too spicy</td><td class="vi">hơi cay quá một chút</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <h3>Phát âm rút gọn khi nói nhanh</h3>
-      <table>
-        <tr><td class="en">I’d like → /aɪd laɪk/</td><td class="vi">rút gọn của <i>I would</i></td></tr>
-        <tr><td class="en">I’ll have → /aɪl hæv/</td><td class="vi">rút gọn của <i>I will</i></td></tr>
-        <tr><td class="en">gonna → going to</td><td class="vi"><i>I’m gonna order the soup.</i></td></tr>
-        <tr><td class="en">wanna → want to</td><td class="vi"><i>Do you wanna split the bill?</i></td></tr>
-        <tr><td class="en">gotta → have got to</td><td class="vi"><i>I gotta go soon.</i></td></tr>
-      </table>
-      <p class="vi">Khi nói tự nhiên, người bản xứ ít đọc tách <i>I would</i> hay <i>going to</i>. Hãy luyện nghe và đọc lướt các dạng rút gọn này.</p>
-    </div>
-  </div>
-</section>
-
 <!-- Slide 8: Hội thoại 2 -->
 <section class="slide" data-t="Hội thoại 2">
   <span class="tag">Hội thoại 2</span>
-  <h2>Đổi món, thưởng thức &amp; thanh toán</h2>
-  <p class="mu">Tình huống: trong bữa ăn, món súp hơi cay nên khách xin đổi nhẹ, sau đó gói đồ mang về và thanh toán. Nữ = nhân viên phục vụ, Nam = khách.</p>
+  <h2>Đổi món, khen đồ ăn &amp; thanh toán</h2>
+  <p class="mu">Tình huống: hai người bạn thưởng thức bữa tối, trao đổi với nhau và nhờ phục vụ đổi món súp cay, gói đồ mang về rồi thanh toán. Nữ = bạn đi cùng / phục vụ, Nam = khách.</p>
   <div class="bar spd">
     <button data-play="d2">▶ Nghe cả đoạn</button>
     <button class="g" data-stop>■ Dừng</button>
+    <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
     <button class="g" data-vi>Hiện/ẩn dịch</button>
   </div>
   <div class="dlg" id="d2"></div>
-  <p class="note">Bấm vào từng câu để nghe lại. Có thể đổi tốc độ ở ô chọn phía trên.</p>
+  <p class="note">Bấm vào từng câu để nghe lại. Bật 🔁 Lặp lại để nghe liên tục không cần bấm lại.</p>
 </section>
 
 <!-- Slide 9: Bóc tách hội thoại 2 -->
@@ -257,29 +257,29 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
     <div class="card">
       <h3>Mẫu câu</h3>
       <table>
-        <tr><td class="en">How is everything tasting so far?</td><td class="vi">Đồ ăn nãy giờ thấy thế nào?</td></tr>
+        <tr><td class="en">It’s great, isn’t it?</td><td class="vi">Tuyệt quá, phải không?</td></tr>
+        <tr><td class="en">Help yourself to some bread.</td><td class="vi">Cứ tự nhiên lấy bánh mì nhé</td></tr>
         <tr><td class="en">It’s a bit too spicy for me.</td><td class="vi">Nó hơi cay quá với tôi</td></tr>
         <tr><td class="en">Could I change it for…?</td><td class="vi">Tôi đổi sang món… được không?</td></tr>
-        <tr><td class="en">Could I get the rest to go?</td><td class="vi">Cho tôi gói phần còn lại mang về được không?</td></tr>
+        <tr><td class="en">Could I get the rest to go?</td><td class="vi">Cho tôi gói phần còn lại mang về?</td></tr>
         <tr><td class="en">Could we get the check, please?</td><td class="vi">Cho chúng tôi xin hóa đơn nhé?</td></tr>
         <tr><td class="en">The service charge is included.</td><td class="vi">Đã bao gồm phí phục vụ</td></tr>
-        <tr><td class="en">Split the bill / It’s on me.</td><td class="vi">Chia hóa đơn / Tôi mời</td></tr>
-        <tr><td class="en">Keep the change.</td><td class="vi">Giữ lại tiền thừa nhé</td></tr>
+        <tr><td class="en">Split the bill / It’s on me / Keep the change.</td><td class="vi">Chia bill / Tôi mời / Giữ tiền thừa nhé</td></tr>
       </table>
     </div>
     <div class="card">
       <h3>Từ vựng &amp; cụm</h3>
       <table>
+        <tr><td class="en">help yourself</td><td class="vi">cứ tự nhiên (lấy ăn)</td></tr>
         <tr><td class="en">a bit too spicy</td><td class="vi">hơi cay quá một chút</td></tr>
         <tr><td class="en">mushroom soup</td><td class="vi">súp nấm</td></tr>
-        <tr><td class="en">a few slices</td><td class="vi">vài lát</td></tr>
-        <tr><td class="en">help yourself</td><td class="vi">cứ tự nhiên</td></tr>
         <tr><td class="en">I’m stuffed</td><td class="vi">tôi no căng rồi</td></tr>
         <tr><td class="en">to go</td><td class="vi">mang về</td></tr>
         <tr><td class="en">pack it up</td><td class="vi">gói lại</td></tr>
         <tr><td class="en">check / bill</td><td class="vi">hóa đơn</td></tr>
-        <tr><td class="en">service charge</td><td class="vi">phí phục vụ</td></tr>
-        <tr><td class="en">change</td><td class="vi">tiền thừa</td></tr>
+        <tr><td class="en">service charge included</td><td class="vi">đã gồm phí phục vụ</td></tr>
+        <tr><td class="en">split the bill</td><td class="vi">chia hóa đơn</td></tr>
+        <tr><td class="en">keep the change</td><td class="vi">giữ lại tiền thừa</td></tr>
       </table>
     </div>
   </div>
@@ -295,32 +295,36 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 
 <!-- Slide 11: Luyện nói 1 -->
 <section class="slide" data-t="Luyện nói 1">
-  <h2>Luyện nói 1: Gọi món &amp; lưu ý dị ứng</h2>
-  <p class="mu">Nghe từng câu rồi nhắc theo thật to. Sau đó đổi vai khách và phục vụ.</p>
+  <h2>Luyện nói 1: Gọi món &amp; đổi món</h2>
+  <p class="mu">Nghe từng câu rồi nhắc theo thật to. Bật 🔁 Lặp lại để luyện phản xạ nhiều vòng.</p>
   <div class="bar spd">
     <button data-play="sp1">▶ Nghe cả đoạn</button>
     <button class="g" data-stop>■ Dừng</button>
+    <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
     <button class="g" data-vi>Hiện/ẩn dịch</button>
   </div>
   <div class="dlg" id="sp1"></div>
-  <div class="act"><b>Role-play chính</b> Đổi vai khách và phục vụ: đặt bàn → hỏi gợi ý món → báo dị ứng → gọi món chính và đồ uống.</div>
+  <div class="act"><b>Role-play</b> Đóng vai khách và phục vụ theo trình tự: đặt bàn → hỏi gợi ý &amp; báo dị ứng → gọi món → đổi món vì quá cay → xin hóa đơn trả tiền.</div>
 </section>
 
 <!-- Slide 12: Luyện nói 2 -->
 <section class="slide" data-t="Luyện nói 2">
-  <h2>Luyện nói 2: Đổi món &amp; thanh toán</h2>
-  <p class="mu">Nghe từng câu rồi nhắc theo. Sau đó trả lời 8 câu hỏi bên dưới bằng thông tin thật của bạn.</p>
+  <h2>Luyện nói 2: Thanh toán &amp; chia bill</h2>
+  <p class="mu">Nghe từng câu rồi nhắc theo. Sau đó tự trả lời 8 câu hỏi bên dưới bằng trải nghiệm của bạn.</p>
   <div class="bar spd">
     <button data-play="sp2">▶ Nghe cả đoạn</button>
     <button class="g" data-stop>■ Dừng</button>
+    <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
     <button class="g" data-vi>Hiện/ẩn dịch</button>
   </div>
   <div class="dlg" id="sp2"></div>
+  <div class="act"><b>Role-play mở rộng</b> Nhóm 4 người ăn xong: kiểm tra xem đã gồm phí phục vụ chưa, bàn xem chia đều 4 người (<i>split the bill four ways</i>) hay một người mời (<i>it’s on me</i>).</div>
   <div class="card" style="margin-top:12px">
     <h3>8 câu để tự trả lời (bấm để nghe câu hỏi)</h3>
     <div class="bar spd">
       <button data-play="sp3">▶ Nghe cả đoạn</button>
       <button class="g" data-stop>■ Dừng</button>
+      <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
       <button class="g" data-vi>Hiện/ẩn dịch</button>
     </div>
     <div class="dlg" id="sp3"></div>
@@ -328,29 +332,30 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 </section>
 
 <!-- Slide 13: Tự nói mẫu -->
-<section class="slide" data-t="Tự nói: bữa ăn ngon nhất">
+<section class="slide" data-t="Tự nói mẫu">
   <span class="tag">Tự nói</span>
   <h2>My best meal ever</h2>
-  <p class="mu">Đoạn tự nói mẫu. Nghe, rồi mô tả bữa ăn ngon nhất bạn từng có và vì sao trong 1–2 phút.</p>
+  <p class="mu">Đoạn tự nói mẫu. Nghe, rồi tự kể về bữa ăn ngon nhất bạn từng có trong 1–2 phút.</p>
   <div class="bar spd">
     <button data-play="mono1">▶ Nghe cả đoạn</button>
     <button class="g" data-stop>■ Dừng</button>
+    <button class="g loop-btn" data-loop>🔁 Lặp lại: Tắt</button>
     <button class="g" data-vi>Hiện/ẩn dịch</button>
   </div>
   <div class="dlg" id="mono1"></div>
-  <div class="act"><b>Khung nói (Point – Reason – Example)</b> Bữa ăn đó ở đâu, khi nào, với ai → bạn đã gọi món gì → vì sao món đó ngon/đáng nhớ → cảm giác cuối bữa &amp; thanh toán.</div>
+  <div class="act"><b>Khung nói (1–2 phút)</b> Bữa ăn ở đâu, khi nào, đi cùng ai → bạn đã gọi món gì → hương vị &amp; không khí ra sao → cảm giác cuối bữa &amp; ai trả tiền.</div>
 </section>
 
 <!-- Slide 14: Bài tập tổng hợp -->
 <section class="slide" data-t="Bài tập">
   <h2>Bài tập tổng hợp</h2>
-  <p class="mu">16 câu ôn lại lượng từ, câu hỏi đuôi, mẫu câu gọi món và cụm từ nhà hàng.</p>
+  <p class="mu">16 câu ôn lại lượng từ (some/any/a few/a little), câu hỏi đuôi, mẫu câu gọi món và cụm từ nhà hàng.</p>
   <div class="ex" id="ex11"></div>
 </section>
 
 </main>
 
-<!-- Thanh điều hướng chuyển trang -->
+<!-- Thanh điều hướng chuyển slide -->
 <nav>
   <button class="g" id="pv">← Trước</button>
   <span class="note" id="pg"></span>
@@ -358,117 +363,117 @@ input{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--bd);bor
 </nav>
 
 <script>
-// Dữ liệu hội thoại và các đoạn luyện nói [vai (W/M), câu tiếng Anh, dịch tiếng Việt, văn bản đọc TTS]
+// Dữ liệu hội thoại & luyện nói [vai (W/M), tiếng Anh, tiếng Việt, chuỗi đọc TTS]
 var D={
   "d1": [
     ["W", "Good evening! Welcome to Bistro Nine. Do you have a reservation?", "Chào buổi tối! Chào mừng đến Bistro Nine. Anh có đặt bàn trước không ạ?", "Good evening! Welcome to Bistro Nine. Do you have a reservation?"],
-    ["M", "Yes, a table for two. The reservation is under David.", "Có, một bàn cho hai người. Đặt bàn dưới tên David.", "Yes, a table for two. The reservation is under David."],
-    ["W", "Right this way, please. Here are your menus. Would you like some water to start?", "Mời anh đi lối này. Thực đơn của anh đây ạ. Anh có muốn dùng chút nước trước không?", "Right this way, please. Here are your menus. Would you like some water to start?"],
-    ["M", "Yes, please. Just a little sparkling water. The atmosphere here is great, isn’t it?", "Có, làm ơn. Cho tôi một ít nước có ga. Không khí ở đây tuyệt thật, phải không?", "Yes, please. Just a little sparkling water. The atmosphere here is great, isn’t it?"],
-    ["W", "Thank you! Are you ready to order, or do you need a few more minutes?", "Cảm ơn anh! Anh đã sẵn sàng gọi món chưa, hay cần thêm vài phút nữa ạ?", "Thank you! Are you ready to order, or do you need a few more minutes?"],
+    ["M", "Yes, a table for two, please. The reservation is under David.", "Có, một bàn cho hai người. Đặt bàn dưới tên David.", "Yes, a table for two, please. The reservation is under David."],
+    ["W", "Right this way. Here are your menus. Would you like some water to start?", "Mời anh lối này. Thực đơn của anh đây ạ. Anh có muốn dùng chút nước trước không?", "Right this way. Here are your menus. Would you like some water to start?"],
+    ["M", "Yes, just a little sparkling water, please.", "Có, cho tôi một ít nước có ga nhé.", "Yes, just a little sparkling water, please."],
+    ["W", "Are you ready to order, or do you need a few more minutes?", "Anh đã sẵn sàng gọi món chưa, hay cần thêm vài phút nữa ạ?", "Are you ready to order, or do you need a few more minutes?"],
     ["M", "What do you recommend? We haven’t been here before.", "Bạn gợi ý món nào? Chúng tôi chưa đến đây bao giờ.", "What do you recommend? We haven’t been here before."],
-    ["W", "Our grilled steak is very popular, and we also have a great seafood pasta.", "Món bít tết nướng rất được ưa chuộng, và chúng tôi cũng có mì hải sản rất ngon.", "Our grilled steak is very popular, and we also have a great seafood pasta."],
-    ["M", "Sounds good. Does the pasta have any peanuts? I’m allergic to nuts.", "Nghe hấp dẫn đấy. Món mì có đậu phộng không? Tôi bị dị ứng với các loại hạt.", "Sounds good. Does the pasta have any peanuts? I’m allergic to nuts."],
-    ["W", "No, there aren’t any nuts in the pasta, just a few herbs and a little garlic.", "Không ạ, mì không có hạt nào, chỉ có một ít rau thơm và một chút tỏi thôi.", "No, there aren’t any nuts in the pasta, just a few herbs and a little garlic."],
-    ["M", "Great. I’ll go for the grilled steak, medium rare, with the sauce on the side.", "Tuyệt. Tôi sẽ chọn bít tết nướng, chín tái vừa, nước sốt để riêng nhé.", "Great. I’ll go for the grilled steak, medium rare, with the sauce on the side."],
-    ["W", "Certainly. And what would you like to drink?", "Vâng ạ. Còn đồ uống anh muốn gọi gì ạ?", "Certainly. And what would you like to drink?"],
-    ["M", "I’d like a glass of red wine, and I’ll have a side salad too.", "Tôi muốn một ly rượu vang đỏ, và tôi cũng lấy thêm một đĩa salad ăn kèm.", "I’d like a glass of red wine, and I’ll have a side salad too."],
-    ["W", "Got it. One steak medium rare, sauce on the side, a salad, and red wine. Anything else?", "Đã rõ ạ. Một bít tết tái vừa, sốt để riêng, một salad và rượu vang đỏ. Còn gì nữa không ạ?", "Got it. One steak medium rare, sauce on the side, a salad, and red wine. Anything else?"],
-    ["M", "That’s all for now. Thanks!", "Tạm thời vậy thôi. Cảm ơn bạn!", "That’s all for now. Thanks!"]
+    ["W", "Our grilled steak is very popular, and our spicy seafood pasta is great too.", "Món bít tết nướng rất được ưa chuộng, và mì hải sản cay cũng rất ngon ạ.", "Our grilled steak is very popular, and our spicy seafood pasta is great too."],
+    ["M", "Sounds nice, though spicy food can be a bit too spicy for me. Does the pasta have any peanuts? I’m allergic to nuts.", "Nghe hấp dẫn, nhưng đồ cay đôi khi hơi cay quá với tôi. Món mì có đậu phộng không? Tôi bị dị ứng với các loại hạt.", "Sounds nice, though spicy food can be a bit too spicy for me. Does the pasta have any peanuts? I’m allergic to nuts."],
+    ["W", "No, there aren’t any nuts in it — just a few herbs and a little garlic.", "Không ạ, không có hạt nào đâu — chỉ có một vài loại rau thơm và một ít tỏi thôi.", "No, there aren’t any nuts in it — just a few herbs and a little garlic."],
+    ["M", "Good to know. I’ll go for the grilled steak, medium rare, with the sauce on the side.", "Tốt quá. Tôi sẽ chọn bít tết nướng, chín tái vừa, nước sốt để riêng nhé.", "Good to know. I’ll go for the grilled steak, medium rare, with the sauce on the side."],
+    ["W", "Certainly. Would you like any sides with that?", "Vâng ạ. Anh có muốn gọi thêm món ăn kèm không?", "Certainly. Would you like any sides with that?"],
+    ["M", "I’ll have a side salad, and I’d like a glass of red wine too.", "Tôi sẽ dùng một đĩa salad ăn kèm, và tôi muốn thêm một ly rượu vang đỏ.", "I’ll have a side salad, and I’d like a glass of red wine too."],
+    ["W", "Got it: steak medium rare, sauce on the side, a side salad, and red wine. Anything else?", "Đã rõ ạ: bít tết tái vừa, sốt để riêng, salad ăn kèm và rượu vang đỏ. Còn gì nữa không ạ?", "Got it: steak medium rare, sauce on the side, a side salad, and red wine. Anything else?"],
+    ["M", "That’s all for now. Thank you!", "Tạm thời vậy thôi. Cảm ơn bạn!", "That’s all for now. Thank you!"]
   ],
   "d2": [
-    ["W", "How is everything tasting so far?", "Đồ ăn nãy giờ anh thấy thế nào ạ?", "How is everything tasting so far?"],
-    ["M", "The steak is delicious, thank you. Everything is cooked well, isn’t it?", "Bít tết ngon lắm, cảm ơn bạn. Mọi thứ đều nấu rất vừa miệng nhỉ?", "The steak is delicious, thank you. Everything is cooked well, isn’t it?"],
-    ["W", "I’m glad you like it! What about the soup?", "Rất vui vì anh thích! Còn món súp thì sao ạ?", "I’m glad you like it! What about the soup?"],
-    ["M", "Actually, it’s a bit too spicy for me. Could I change it for a mushroom soup?", "Thật ra nó hơi cay quá với tôi. Tôi đổi sang súp nấm được không?", "Actually, it’s a bit too spicy for me. Could I change it for a mushroom soup?"],
-    ["W", "Of course! I’ll bring you a fresh bowl right away. Would you like some bread too?", "Tất nhiên ạ! Tôi mang bát mới ra ngay. Anh có muốn dùng thêm chút bánh mì không?", "Of course! I’ll bring you a fresh bowl right away. Would you like some bread too?"],
-    ["M", "Yes, a few slices would be great. Help yourself to the menu if you need it back.", "Vâng, vài lát thì tuyệt. Bạn cứ tự nhiên lấy lại thực đơn nếu cần nhé.", "Yes, a few slices would be great. Help yourself to the menu if you need it back."],
-    ["W", "Thanks. Here’s your mushroom soup. Enjoy!", "Cảm ơn anh. Súp nấm của anh đây ạ. Chúc anh ngon miệng!", "Thanks. Here’s your mushroom soup. Enjoy!"],
-    ["M", "Oh, I’m stuffed! Could I get the rest of this pasta to go?", "Ôi, tôi no căng rồi! Cho tôi gói phần mì còn lại mang về được không?", "Oh, I’m stuffed! Could I get the rest of this pasta to go?"],
-    ["W", "Certainly, I’ll pack it up for you. Would you like any dessert?", "Chắc chắn rồi, tôi sẽ gói lại giúp anh. Anh có muốn gọi tráng miệng không ạ?", "Certainly, I’ll pack it up for you. Would you like any dessert?"],
-    ["M", "No, thanks. Could we get the check, please?", "Không, cảm ơn. Cho chúng tôi xin hóa đơn nhé?", "No, thanks. Could we get the check, please?"],
-    ["W", "Here you go. Please note that the service charge is included.", "Hóa đơn đây ạ. Xin lưu ý là đã bao gồm phí phục vụ rồi ạ.", "Here you go. Please note that the service charge is included."],
-    ["M", "Great. My friend wanted to split the bill, but it’s on me tonight. Here’s fifty dollars.", "Tuyệt. Bạn tôi định chia hóa đơn, nhưng tối nay tôi mời. Gửi bạn 50 đô.", "Great. My friend wanted to split the bill, but it’s on me tonight. Here’s fifty dollars."],
-    ["W", "Thank you, let me get your change.", "Cảm ơn anh, để tôi lấy tiền thừa ạ.", "Thank you, let me get your change."],
-    ["M", "That’s okay, keep the change. You’ve been really helpful!", "Không sao đâu, bạn cứ giữ tiền thừa nhé. Bạn phục vụ rất chu đáo!", "That’s okay, keep the change. You’ve been really helpful!"]
+    ["M", "The atmosphere here is great, isn’t it?", "Không khí ở đây tuyệt thật, phải không?", "The atmosphere here is great, isn’t it?"],
+    ["W", "Yes, I love it! You’ve been here before, haven’t you?", "Ừ, mình thích lắm! Bạn đã từng đến đây rồi, phải không?", "Yes, I love it! You’ve been here before, haven’t you?"],
+    ["M", "Actually, it’s my first time. Help yourself to some bread!", "Thật ra đây là lần đầu của mình. Cứ tự nhiên lấy bánh mì ăn nhé!", "Actually, it’s my first time. Help yourself to some bread!"],
+    ["W", "Thanks! The soup isn’t too spicy, is it?", "Cảm ơn! Món súp không cay quá chứ?", "Thanks! The soup isn’t too spicy, is it?"],
+    ["M", "Hmm, actually it’s a bit too spicy for me. Excuse me — could I change this soup for a mushroom soup?", "Ừm, thật ra nó hơi cay quá với mình. Xin lỗi bạn phục vụ — tôi đổi bát súp này sang súp nấm được không?", "Hmm, actually it’s a bit too spicy for me. Excuse me — could I change this soup for a mushroom soup?"],
+    ["W", "Of course, no problem at all! I’ll bring you a fresh bowl right away.", "Tất nhiên ạ, không vấn đề gì! Tôi mang bát mới ra ngay đây ạ.", "Of course, no problem at all! I’ll bring you a fresh bowl right away."],
+    ["M", "That mushroom soup and steak were amazing. Oh, I’m stuffed!", "Súp nấm với bít tết ngon tuyệt. Ôi, mình no căng rồi!", "That mushroom soup and steak were amazing. Oh, I’m stuffed!"],
+    ["W", "Me too! Would you like to get the rest of the pasta to go?", "Mình cũng vậy! Bạn có muốn gói phần mì còn lại mang về không?", "Me too! Would you like to get the rest of the pasta to go?"],
+    ["M", "Good idea. Excuse me, could I get the rest of this to go, and could we get the check, please?", "Ý hay đấy. Xin lỗi, cho tôi gói phần này mang về, và cho chúng tôi xin hóa đơn nhé?", "Good idea. Excuse me, could I get the rest of this to go, and could we get the check, please?"],
+    ["W", "Sure, I’ll pack it up. Here’s your check — please note that the service charge is included.", "Vâng ạ, tôi sẽ gói lại ngay. Hóa đơn đây ạ — xin lưu ý đã bao gồm phí phục vụ rồi ạ.", "Sure, I’ll pack it up. Here’s your check — please note that the service charge is included."],
+    ["W", "Shall we split the bill?", "Mình chia hóa đơn nhé?", "Shall we split the bill?"],
+    ["M", "No, put your wallet away — it’s on me tonight!", "Thôi, cất ví đi — tối nay mình mời!", "No, put your wallet away — it’s on me tonight!"],
+    ["M", "Here’s sixty dollars. Keep the change, please.", "Gửi bạn 60 đô. Bạn cứ giữ lại tiền thừa nhé.", "Here’s sixty dollars. Keep the change, please."],
+    ["W", "Thank you so much! Have a wonderful evening!", "Cảm ơn anh rất nhiều! Chúc anh chị buổi tối vui vẻ!", "Thank you so much! Have a wonderful evening!"]
   ],
   "sp1": [
     ["W", "Do you have a reservation?", "Anh có đặt bàn trước không ạ?", "Do you have a reservation?"],
     ["M", "Yes, a table for two under David.", "Có, một bàn cho hai người dưới tên David.", "Yes, a table for two under David."],
     ["W", "Are you ready to order?", "Anh đã sẵn sàng gọi món chưa ạ?", "Are you ready to order?"],
-    ["M", "What do you recommend?", "Bạn gợi ý món nào?", "What do you recommend?"],
-    ["W", "Our grilled steak is very popular.", "Món bít tết nướng của chúng tôi rất được ưa chuộng.", "Our grilled steak is very popular."],
-    ["M", "Does it have any nuts? I’m allergic to peanuts.", "Món đó có hạt không? Tôi bị dị ứng với đậu phộng.", "Does it have any nuts? I’m allergic to peanuts."],
-    ["M", "I’ll go for the steak, medium rare, with the sauce on the side.", "Tôi sẽ chọn bít tết, chín tái vừa, nước sốt để riêng nhé.", "I’ll go for the steak, medium rare, with the sauce on the side."],
-    ["M", "I’d like a little sparkling water too, please.", "Cho tôi thêm một ít nước có ga nữa nhé.", "I’d like a little sparkling water too, please."]
+    ["M", "What do you recommend? I’m allergic to nuts.", "Bạn gợi ý món nào? Tôi bị dị ứng với các loại hạt.", "What do you recommend? I’m allergic to nuts."],
+    ["W", "Our grilled steak is very popular.", "Món bít tết nướng rất được ưa chuộng ạ.", "Our grilled steak is very popular."],
+    ["M", "I’ll go for the steak, medium rare, with the sauce on the side.", "Tôi sẽ chọn bít tết, chín tái vừa, nước sốt để riêng.", "I’ll go for the steak, medium rare, with the sauce on the side."],
+    ["M", "Excuse me, this soup is a bit too spicy. Could I change it for a mushroom soup?", "Xin lỗi, món súp này hơi cay quá. Tôi đổi sang súp nấm được không?", "Excuse me, this soup is a bit too spicy. Could I change it for a mushroom soup?"],
+    ["W", "Of course! I’ll bring you a fresh bowl right away.", "Tất nhiên ạ! Tôi mang bát mới ra ngay.", "Of course! I’ll bring you a fresh bowl right away."]
   ],
   "sp2": [
-    ["W", "How is everything tasting so far?", "Đồ ăn nãy giờ anh thấy thế nào ạ?", "How is everything tasting so far?"],
-    ["M", "It’s great, isn’t it? Just the soup is a bit too spicy.", "Ngon lắm, phải không? Chỉ có súp là hơi cay quá một chút.", "It’s great, isn’t it? Just the soup is a bit too spicy."],
-    ["W", "Would you like to change it for something else?", "Anh có muốn đổi sang món khác không ạ?", "Would you like to change it for something else?"],
-    ["M", "Yes, I’ll have the mushroom soup instead.", "Có, tôi sẽ đổi sang súp nấm nhé.", "Yes, I’ll have the mushroom soup instead."],
-    ["M", "I’m stuffed! Could I get the rest to go?", "Tôi no căng rồi! Cho tôi gói phần còn lại mang về được không?", "I’m stuffed! Could I get the rest to go?"],
-    ["M", "Could we get the check, please?", "Cho chúng tôi xin hóa đơn nhé?", "Could we get the check, please?"],
-    ["W", "Here you go. Service charge is included.", "Hóa đơn đây ạ. Đã bao gồm phí phục vụ rồi ạ.", "Here you go. Service charge is included."],
-    ["M", "Let’s not split the bill — it’s on me. Keep the change!", "Đừng chia hóa đơn — tối nay tôi mời. Bạn cứ giữ tiền thừa nhé!", "Let’s not split the bill — it’s on me. Keep the change!"]
+    ["M", "The food here is great, isn’t it?", "Đồ ăn ở đây ngon thật, phải không?", "The food here is great, isn’t it?"],
+    ["W", "Yes, I’m completely stuffed!", "Ừ, mình no căng luôn rồi!", "Yes, I’m completely stuffed!"],
+    ["M", "Could I get the rest to go, and could we get the check, please?", "Cho tôi gói phần còn lại mang về, và cho chúng tôi xin hóa đơn nhé?", "Could I get the rest to go, and could we get the check, please?"],
+    ["W", "Here’s your check. The service charge is included.", "Hóa đơn đây ạ. Đã bao gồm phí phục vụ rồi ạ.", "Here’s your check. The service charge is included."],
+    ["W", "Do you wanna split the bill?", "Bạn muốn chia hóa đơn không?", "Do you wanna split the bill?"],
+    ["M", "No, it’s on me tonight.", "Thôi, tối nay tôi mời.", "No, it’s on me tonight."],
+    ["M", "Here you go. Keep the change!", "Của bạn đây. Giữ lại tiền thừa nhé!", "Here you go. Keep the change!"],
+    ["W", "Thank you! Have a great evening!", "Cảm ơn anh! Chúc buổi tối vui vẻ!", "Thank you! Have a great evening!"]
   ],
   "sp3": [
     ["M", "Do you prefer eating out or cooking at home?", "Bạn thích đi ăn ngoài hay nấu ở nhà hơn?", "Do you prefer eating out or cooking at home?"],
     ["M", "Are you allergic to any food?", "Bạn có bị dị ứng với món ăn nào không?", "Are you allergic to any food?"],
-    ["M", "How do you like your steak cooked?", "Bạn thích ăn bít tết chín ở mức nào?", "How do you like your steak cooked?"],
-    ["M", "What do you say when a dish is too spicy?", "Bạn nói gì khi một món ăn quá cay?", "What do you say when a dish is too spicy?"],
-    ["M", "Do you usually split the bill with friends?", "Bạn có thường chia hóa đơn với bạn bè không?", "Do you usually split the bill with friends?"],
+    ["M", "How do you like your steak cooked?", "Bạn thích ăn bít tết chín mức nào?", "How do you like your steak cooked?"],
+    ["M", "What do you say if a dish is a bit too spicy?", "Bạn nói gì nếu một món ăn hơi cay quá?", "What do you say if a dish is a bit too spicy?"],
+    ["M", "Do you usually split the bill when eating out with friends?", "Bạn có thường chia hóa đơn khi đi ăn với bạn bè không?", "Do you usually split the bill when eating out with friends?"],
     ["M", "What do you usually order at your favourite restaurant?", "Bạn thường gọi món gì ở nhà hàng yêu thích?", "What do you usually order at your favourite restaurant?"],
-    ["M", "Do you often ask for leftovers to go?", "Bạn có hay xin gói đồ ăn thừa mang về không?", "Do you often ask for leftovers to go?"],
-    ["M", "Do you usually leave a tip or tell the waiter to keep the change?", "Bạn có thường boa hay bảo phục vụ giữ tiền thừa không?", "Do you usually leave a tip or tell the waiter to keep the change?"]
+    ["M", "Do you often ask to get leftovers to go?", "Bạn có hay xin gói đồ ăn thừa mang về không?", "Do you often ask to get leftovers to go?"],
+    ["M", "When was the last time you said “it’s on me”?", "Lần gần nhất bạn nói “để tôi mời” là khi nào?", "When was the last time you said it’s on me?"]
   ],
   "mono1": [
-    ["W", "One of the best meals I’ve ever had was at a small seafood restaurant last year.", "Một trong những bữa ăn ngon nhất tôi từng có là ở một nhà hàng hải sản nhỏ năm ngoái.", "One of the best meals I’ve ever had was at a small seafood restaurant last year."],
+    ["W", "One of the best meals I’ve ever had was at a small seaside restaurant last summer.", "Một trong những bữa ăn ngon nhất tôi từng có là ở một nhà hàng nhỏ ven biển mùa hè năm ngoái.", "One of the best meals I’ve ever had was at a small seaside restaurant last summer."],
     ["W", "I went there with a few close friends to celebrate my birthday, and the atmosphere was warm and lively.", "Tôi đến đó cùng vài người bạn thân để mừng sinh nhật, và không khí rất ấm cúng, sôi động.", "I went there with a few close friends to celebrate my birthday, and the atmosphere was warm and lively."],
     ["W", "We asked the waiter what he recommended, so I went for grilled salmon with lemon sauce on the side.", "Chúng tôi hỏi phục vụ gợi ý món nào, nên tôi chọn cá hồi nướng với sốt chanh để riêng.", "We asked the waiter what he recommended, so I went for grilled salmon with lemon sauce on the side."],
-    ["W", "The fish was fresh and tender, and we shared a little garlic bread and some salad.", "Cá rất tươi và mềm, và chúng tôi chia nhau một ít bánh mì bơ tỏi cùng salad.", "The fish was fresh and tender, and we shared a little garlic bread and some salad."],
-    ["W", "By the end, everyone was completely stuffed. My friends wouldn’t let me split the bill — they said it was on them!", "Đến cuối bữa ai cũng no căng. Các bạn tôi không cho chia hóa đơn — họ bảo bữa đó họ mời!", "By the end, everyone was completely stuffed. My friends wouldn’t let me split the bill — they said it was on them!"]
+    ["W", "The fish was super fresh and tender, and we shared a little garlic bread and some salad.", "Cá cực kỳ tươi và mềm, và chúng tôi chia nhau một ít bánh mì bơ tỏi cùng salad.", "The fish was super fresh and tender, and we shared a little garlic bread and some salad."],
+    ["W", "By the end of dinner, everyone was completely stuffed. My friends wouldn’t let me split the bill — they said it was on them!", "Đến cuối bữa ăn ai cũng no căng. Các bạn tôi không cho tôi chia hóa đơn — họ bảo bữa đó họ mời!", "By the end of dinner, everyone was completely stuffed. My friends wouldn’t let me split the bill — they said it was on them!"]
   ]
 };
 
-// Dữ liệu bài tập tương tác [câu hỏi, mảng đáp án đúng, mảng lựa chọn (null nếu điền tự do), câu đọc âm thanh (nếu có)]
+// Dữ liệu bài tập tương tác [câu hỏi, đáp án chấp nhận, mảng lựa chọn (null nếu gõ tay), câu đọc TTS]
 var EX={
   "ex7": [
-    ["Yes, a ___ for two.", ["table"], null, "Yes, a table for two. The reservation is under David."],
+    ["Yes, a ___ for two, please.", ["table"], null, "Yes, a table for two, please. The reservation is under David."],
     ["Are you ready to ___?", ["order"], null, "Are you ready to order, or do you need a few more minutes?"],
     ["What do you ___?", ["recommend"], null, "What do you recommend? We haven’t been here before."],
     ["I’m ___ to nuts.", ["allergic"], null, "Does the pasta have any peanuts? I’m allergic to nuts."],
     ["I’ll go for the grilled steak, medium ___.", ["rare"], null, "I’ll go for the grilled steak, medium rare, with the sauce on the side."],
-    ["Actually, it’s a bit too ___ for me.", ["spicy"], null, "Actually, it’s a bit too spicy for me."],
-    ["Oh, I’m ___!", ["stuffed"], null, "Oh, I’m stuffed! Could I get the rest of this pasta to go?"],
+    ["Actually, it’s a bit too ___ for me.", ["spicy"], null, "Hmm, actually it’s a bit too spicy for me."],
+    ["Oh, I’m ___!", ["stuffed"], null, "That mushroom soup and steak were amazing. Oh, I’m stuffed!"],
     ["Could we get the ___, please?", ["check"], null, "Could we get the check, please?"],
-    ["Please note that the service charge is ___.", ["included"], null, "Please note that the service charge is included."],
-    ["That’s okay, keep the ___.", ["change"], null, "That’s okay, keep the change. You’ve been really helpful!"]
+    ["Please note that the service charge is ___.", ["included"], null, "Here’s your check — please note that the service charge is included."],
+    ["Here’s sixty dollars. Keep the ___, please.", ["change"], null, "Here’s sixty dollars. Keep the change, please."]
   ],
   "ex11": [
-    ["Would you like ___ water?", ["some"], ["some", "any", "a few"]],
-    ["Does the salad have ___ nuts?", ["any"], ["some", "any", "a little"]],
-    ["We just need ___ more minutes to look at the menu.", ["a few"], ["a few", "a little", "any"]],
-    ["Could I have ___ sparkling water, please?", ["a little"], ["a few", "a little", "many"]],
-    ["The food here is great, ___ it?", ["isn’t"], ["isn’t", "aren’t", "doesn’t"]],
-    ["You don’t eat spicy food, ___ you?", ["do"], ["do", "don’t", "are"]],
-    ["This soup was delicious, ___ it?", ["wasn’t"], ["wasn’t", "didn’t", "isn’t"]],
+    ["Would you like ___ water to start?", ["some"], ["some", "any", "a few"]],
+    ["Does the pasta have ___ peanuts?", ["any"], ["some", "any", "a little"]],
+    ["Do you need ___ more minutes?", ["a few"], ["a few", "a little", "any"]],
+    ["Just ___ sparkling water, please.", ["a little"], ["a few", "a little", "many"]],
+    ["The atmosphere here is great, ___ it?", ["isn’t"], ["isn’t", "aren’t", "doesn’t"]],
+    ["You’ve been here before, ___ you?", ["haven’t"], ["haven’t", "don’t", "aren’t"]],
+    ["The soup isn’t too spicy, ___ it?", ["is"], ["is", "isn’t", "does"]],
     ["I’ll ___ for the grilled steak, medium rare.", ["go"], ["go", "want", "make"]],
-    ["I’m ___ to peanuts, so please no nuts.", ["allergic"], ["allergic", "stuffed", "included"]],
-    ["Could I have the dressing ___ the side?", ["on"], ["on", "in", "at"]],
+    ["I’d ___ a glass of red wine, please.", ["like"], ["like", "have", "go"]],
+    ["Could I have the sauce ___ the side?", ["on"], ["on", "in", "at"]],
     ["“Are you ready to order?” → ___", ["Yes, I’ll have the pasta, please."], ["Yes, I’ll have the pasta, please.", "Keep the change.", "It’s on me."]],
-    ["“Could we get the check, please?” → ___", ["Sure, I’ll bring it right away."], ["I’m allergic to seafood.", "Sure, I’ll bring it right away.", "Medium rare, please."]],
-    ["split the bill", ["chia hóa đơn"], ["chia hóa đơn", "tôi mời", "no căng bụng", "giữ lại tiền thừa", "mang về", "đã bao gồm phí phục vụ", "cứ tự nhiên"]],
-    ["it’s on me", ["tôi mời"], ["chia hóa đơn", "tôi mời", "no căng bụng", "giữ lại tiền thừa", "mang về", "đã bao gồm phí phục vụ", "cứ tự nhiên"]],
+    ["“Shall we split the bill?” → ___", ["No, it’s on me tonight."], ["Medium rare, please.", "No, it’s on me tonight.", "I’m allergic to nuts."]],
+    ["I’m stuffed", ["tôi no căng rồi"], ["tôi no căng rồi", "tôi mời", "chia hóa đơn", "giữ lại tiền thừa", "mang về", "đã bao gồm phí phục vụ", "cứ tự nhiên"]],
+    ["split the bill", ["chia hóa đơn"], ["tôi no căng rồi", "tôi mời", "chia hóa đơn", "giữ lại tiền thừa", "mang về", "đã bao gồm phí phục vụ", "cứ tự nhiên"]],
     ["Sắp xếp: we / Could / check / get / the", ["Could we get the check", "Could we get the check?"]],
-    ["Dịch: Món này hơi cay quá với tôi.", ["This dish is a bit too spicy for me", "It is a bit too spicy for me", "It’s a bit too spicy for me"]]
+    ["Dịch: Tối nay tôi mời.", ["It’s on me tonight", "It is on me tonight", "It’s on me tonight."]]
   ]
 };
 
-// Quản lý slide và bộ đọc giọng nói Web Speech API
-var S=[].slice.call(document.querySelectorAll(".slide")),cur=0,stopF=false,TTS=window.speechSynthesis;
+// Quản lý slide, TTS và trạng thái tự lặp lại (LOOP)
+var S=[].slice.call(document.querySelectorAll(".slide")),cur=0,stopF=false,LOOP=false,loopTm=null,TTS=window.speechSynthesis;
 
-// Hiển thị nội dung hội thoại vào các khung .dlg
+// Dựng giao diện các dòng hội thoại
 Object.keys(D).forEach(function(k){
   var h="";
   D[k].forEach(function(l,i){
@@ -477,12 +482,11 @@ Object.keys(D).forEach(function(k){
   document.getElementById(k).innerHTML=h;
 });
 
-// Chuẩn hóa chuỗi văn bản trước khi đọc TTS
 function clean(t){return t.replace(/\u2019/g,"'").replace(/ABC Corp/g,"A B C Corporation");}
 
-// Thiết lập chọn giọng đọc tiếng Anh tốt nhất cho Nữ (W) và Nam (M)
+// Cấu hình chọn giọng Nữ (W) / Nam (M) tối ưu cho Web Speech API
 var VW=null,VM=null,RATE=.95;
-function vlist(){return TTS?TTS.getVoices().filter(function(x){return/^en/i.test(x.lang)}):[]}
+function vlist(){return TTS?TTS.getVoices().filter(function(x){return/^en/i.test(x.lang)}):[];}
 var FEM=/aria|jenny|\bava\b|samantha|zira|susan|karen|moira|victoria|tessa|libby|sonia|allison|serena|emma|michelle|nicole|joanna|salli|kendra|kimberly|heather|hazel|catherine|fiona|amy|female|sfg|tpc|tpf|iob|iog/i;
 var MAL=/guy|davis|david|mark|daniel|aaron|alex\b|george|ryan|james|thomas|tony|brian|christopher|eric|steffan|oliver|arthur|gordon|rishi|evan|matthew|liam|ronald|\bmale\b|iol|iom|tpd/i;
 var PRE=/^(Google US English|Google UK English Male)$/i;
@@ -510,10 +514,9 @@ function pick(g){
   return bst(L.filter(function(x){return gend(x)!="W"&&x!==w}))||bst(L.filter(function(x){return x!==w}))||null;
 }
 
-// Hiển thị thông báo lỗi phát âm thanh nếu trình duyệt không hỗ trợ
 function wn(m){var e=document.getElementById("warn");if(e){e.textContent=m;e.style.display=m?"block":"none";}}
 
-// Hàm phát âm thanh TTS có xử lý tách câu và ngữ điệu tự nhiên
+// Hàm phát giọng đọc theo câu với ngữ điệu tự nhiên
 function say(g,t,cb){
   if(!TTS){wn("Trình duyệt này không hỗ trợ đọc giọng. Hãy mở link bằng Chrome hoặc Safari.");return;}
   var txt=clean(t),parts=(txt.match(/[^.!?]+[.!?]*/g)||[txt]).map(function(s){return s.trim()}).filter(Boolean);
@@ -544,7 +547,6 @@ function say(g,t,cb){
   nx();
 }
 
-// Khởi tạo danh sách chọn giọng và lưu vào localStorage
 function initV(){
   try{VW=VW||localStorage.getItem("vW");VM=VM||localStorage.getItem("vM");}catch(e){}
   var L=vlist();
@@ -562,44 +564,76 @@ function setV(g,n){
   initV();
 }
 
-// Điều khiển phát / dừng hội thoại
+// Đồng bộ giao diện tất cả nút bật/tắt lặp lại
+function syncLoop(){
+  [].forEach.call(document.querySelectorAll(".loop-btn"),function(b){
+    b.classList.toggle("on",LOOP);
+    b.textContent=LOOP?"🔁 Lặp lại: Bật":"🔁 Lặp lại: Tắt";
+  });
+}
+
+// Dừng toàn bộ phát âm thanh và hủy bộ đếm lặp lại nếu đang chờ
 var GEN=0;
 function stop(){
   GEN++;
+  clearTimeout(loopTm);
+  loopTm=null;
   window._cx=TTS&&(TTS.speaking||TTS.pending);
   stopF=true;
   if(TTS)TTS.cancel();
   [].forEach.call(document.querySelectorAll(".pl"),function(e){e.classList.remove("pl");});
 }
+
+// Đọc 1 câu riêng lẻ khi bấm trực tiếp vào dòng
 function one(e){
   stop();stopF=false;
   e.classList.add("pl");
   var l=D[e.dataset.k][e.dataset.i];
   say(l[0],l[3]||l[1],function(){e.classList.remove("pl");});
 }
+
+// Đọc cả đoạn hội thoại và tự động lặp lại từ đầu nếu đang bật LOOP
 function all(k){
   stop();stopF=false;
-  var els=document.querySelectorAll("#"+k+" .line"),i=0;
+  var els=document.querySelectorAll("#"+k+" .line"),i=0,g0=GEN;
+  if(els.length)els[0].scrollIntoView({block:"nearest",behavior:"smooth"});
   (function nx(){
-    if(stopF||i>=els.length)return;
+    if(stopF||g0!=GEN)return;
+    if(i>=els.length){
+      if(LOOP&&!stopF){
+        loopTm=setTimeout(function(){
+          if(LOOP&&!stopF&&g0==GEN)all(k);
+        },1000);
+      }
+      return;
+    }
     var e=els[i],l=D[k][i];
     i++;
     e.classList.add("pl");
-    e.scrollIntoView({block:"nearest"});
-    say(l[0],l[3]||l[1],function(){e.classList.remove("pl");setTimeout(nx,450);});
+    e.scrollIntoView({block:"nearest",behavior:"smooth"});
+    say(l[0],l[3]||l[1],function(){
+      e.classList.remove("pl");
+      setTimeout(nx,450);
+    });
   })();
 }
 
-// Xử lý sự kiện bấm trên các nút điều khiển hội thoại
+// Xử lý bấm nút phát, dừng, lặp lại, hiện/ẩn dịch
 document.addEventListener("click",function(ev){
   var t=ev.target,e;
   if((e=t.closest(".line")))return one(e);
   if(t.dataset.play)return all(t.dataset.play);
   if(t.hasAttribute("data-stop"))return stop();
+  if(t.hasAttribute("data-loop")){
+    LOOP=!LOOP;
+    if(!LOOP){clearTimeout(loopTm);loopTm=null;}
+    syncLoop();
+    return;
+  }
   if(t.hasAttribute("data-vi"))return document.querySelector(".slide.on").classList.toggle("showvi");
 });
 
-// Điều hướng chuyển slide và lưu trạng thái trên URL hash
+// Điều hướng chuyển slide (tự động dừng đọc & hủy lặp lại khi đổi slide)
 function go(n){
   stop();
   cur=Math.max(0,Math.min(S.length-1,n));
@@ -617,7 +651,7 @@ document.addEventListener("keydown",function(e){
   if(e.key=="ArrowLeft")go(cur-1);
 });
 
-// Chèn ô chọn tốc độ đọc vào các thanh .bar.spd
+// Chèn ô chọn tốc độ vào tất cả các thanh điều khiển .bar.spd
 [].forEach.call(document.querySelectorAll(".bar.spd"),function(b){
   b.insertAdjacentHTML("beforeend",'<select class="sp"><option value=".75">Chậm</option><option value=".95" selected>Vừa</option><option value="1.1">Bình thường nhanh</option></select>');
 });
@@ -625,7 +659,6 @@ document.addEventListener("keydown",function(e){
 if(TTS){TTS.onvoiceschanged=initV;setTimeout(initV,300);}
 initV();
 
-// Đồng bộ thay đổi giọng đọc và tốc độ
 document.addEventListener("change",function(e){
   var t=e.target;
   if(t.classList.contains("vp")){setV(t.dataset.g,t.value);}
@@ -635,7 +668,7 @@ document.addEventListener("change",function(e){
   }
 });
 
-// Bộ máy bài tập tương tác: chuẩn hóa đáp án, dựng giao diện và chấm điểm
+// Hệ thống bài tập tương tác & chấm điểm tự động
 function nz(s){return(s||"").toLowerCase().replace(/[\s.,!?:'’"“”$@\-]/g,"");}
 function rx(id){
   var h="";
@@ -669,7 +702,7 @@ document.addEventListener("click",function(ev){
   box.querySelector(".sc").textContent=t.dataset.chk?"Đúng "+n+"/"+EX[id].length:"";
 });
 
-// Nút thử giọng Nữ và Nam
+// Nút thử giọng Nữ & Nam
 document.addEventListener("click",function(ev){
   if(ev.target.hasAttribute("data-tv")){
     stop();stopF=false;
@@ -679,7 +712,7 @@ document.addEventListener("click",function(ev){
   }
 });
 
-// Mở slide theo URL hash (mặc định là slide 1)
+// Khởi chạy slide theo URL hash
 var h=parseInt((location.hash||"").slice(1));
 go(h>0?h-1:0);
 </script>
